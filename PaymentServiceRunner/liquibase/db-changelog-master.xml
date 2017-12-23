@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="Create/Update tables" author="vlad" runOnChange="true">
+
+        <!-- Create tables -->
+        <createTable tableName="Bank_accounts">
+            <column name="ID" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="number" type="varchar(16)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="code" type="varchar(3)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="date" type="varchar(5)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="brand" type="varchar(25)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="currency" type="varchar(3)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="value" type="decimal">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addAutoIncrement columnName="ID" tableName="Bank_accounts" columnDataType="int" incrementBy="1" startWith="1000"/>
+
+        <createTable tableName="Payments">
+            <column name="ID" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="from_account" type="varchar(16)">
+                 <constraints nullable="false"
+                             foreignKeyName="FK_payment"
+                             referencedTableName="Bank_accounts" referencedColumnNames="number" deleteCascade="true"/>
+            </column>
+            <column name="to_account" type="varchar(16)">          
+            </column>
+             <column name="currency" type="varchar(3)">          
+            </column>
+             <column name="commission" type="decimal">          
+            </column>
+            <column name="date" type="date">          
+            </column>
+            <column name="value" type="decimal">          
+            </column>
+        </createTable>
+        <addAutoIncrement columnName="ID" tableName="Payments" columnDataType="int" incrementBy="1" startWith="1000"/>
+      
+        <!-- Loading of Data -->
+        <loadData encoding="UTF-8" file="liquibase/Bank_accounts.csv" tableName="Bank_accounts" separator=";">
+            <column name="ID" type="NUMERIC"/>
+            <column name="number" type="STRING"/>
+            <column name="code" type="STRING"/>
+            <column name="date" type="STRING"/>
+            <column name="name" type="STRING"/>
+            <column name="brand" type="STRING"/>
+            <column name="currency" type="STRING"/>
+            <column name="value" type="NUMERIC"/>
+        </loadData>
+        <loadData encoding="UTF-8" file="liquibase/Payments.csv" tableName="Payments" separator=";">
+            <column name="ID" type="NUMERIC"/>
+            <column name="from_account" type="STRING"/>
+            <column name="to_account" type="STRING"/>
+            <column name="currency" type="STRING"/>
+            <column name="commission" type="NUMERIC"/>
+            <column name="date" type="DATE"/>
+            <column name="value" type="NUMERIC"/>
+        </loadData>       
+    </changeSet>
+</databaseChangeLog>

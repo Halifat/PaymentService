@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<commissions>
+	<commission>
+		<brand>MASTERCARD</brand>
+		<currency>RUB</currency>
+		<value>2.5</value>
+	</commission>
+	<commission>
+		<brand>MASTERCARD</brand>
+		<currency>BYN</currency>
+		<value>2</value>
+	</commission>
+	<commission>
+		<brand>MASTERCARD</brand>
+		<currency>USD</currency>
+		<value>1</value>
+	</commission>
+	<commission>
+		<brand>MASTERCARD</brand>
+		<currency>EUR</currency>
+		<value>1</value>
+	</commission>
+	<commission>
+		<brand>VISA</brand>
+		<currency>USD</currency>
+		<value>2</value>
+	</commission>
+	<commission>
+		<brand>VISA</brand>
+		<currency>BYN</currency>
+		<value>2.5</value>
+	</commission>
+	<commission>
+		<brand>VISA</brand>
+		<currency>RUB</currency>
+		<value>2.5</value>
+	</commission>
+	<commission>
+		<brand>VISA</brand>
+		<currency>EUR</currency>
+		<value>2</value>
+	</commission>
+</commissions>

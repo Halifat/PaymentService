@@ -1,0 +1,94 @@
+<html>
+  <link rel="stylesheet" href="css/creditly.css">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+</head> 
+<body>
+<div class="offert" id="offert"></div>
+  <div class="main_block">
+  <form class="creditly-card-form" onsubmit="return false;">
+    <section class="creditly-wrapper blue-theme">
+      <div class="credit-card-wrapper">
+        <div class="first-row form-group">
+          <div class="col-sm-8 controls">
+            <label class="control-label">To Number</label>
+            <input class="number credit-card-number form-control"
+              name="toNumber"
+              type="text" name="number"
+              oninput="validationCardNumber(this)"
+              required
+              placeholder="&#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149;" >
+          </div>
+          <div class="col-sm-4 controls">
+            <label class="control-label">Value</label>
+            <input class="security-code form-control"
+              name="value"
+              inputmode="numeric"
+              required
+              oninput="validationValue(this)"
+              type="text" name="security-code"
+              placeholder="0.00">
+          </div>
+          <div class="col-sm-4 controls">
+            <label class="control-label">Currency</label>   
+            <select name="currency" size="1">
+				<option>BYN</option>
+				<option>RUB</option>
+				<option>USD</option>
+				<option>EUR</option>
+			</select>
+          </div>
+          <div class="col-sm-8 controls">
+            <label class="control-label">Card Number</label>
+            <input class="number credit-card-number form-control"
+              name="number"
+              type="text" name="number"
+              required
+              oninput="validationCardNumber(this)"
+              inputmode="numeric" autocomplete="cc-number" autocompletetype="cc-number" x-autocompletetype="cc-number"
+              placeholder="&#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149;">
+          </div>
+          <div class="col-sm-4 controls">
+            <label class="control-label">CVV</label>
+            <input class="security-code form-control"
+              name="code"
+              inputmode="numeric"
+              oninput="validationCode(this)"
+              required
+              type="text" name="security-code"
+              placeholder="&#149;&#149;&#149;">
+          </div>
+        </div>
+        <div class="second-row form-group">
+          <div class="col-sm-8 controls">
+            <label class="control-label">Name on Card</label>
+            <input class="billing-address-name form-control"
+              name="name"
+              required
+              oninput="validationName(this)"
+              type="text" name="name"
+              placeholder="John Smith">
+          </div>
+          <div class="col-sm-4 controls">
+            <label class="control-label">Expiration</label>
+            <input class="expiration-month-and-year form-control"
+              required
+              name="date"
+              type="text" name="expiration-month-and-year"
+              oninput="validationDate(this)"
+              placeholder="MM / YY">
+          </div>
+        </div>
+        <div class="card-type">
+        </div>
+      </div>
+    </section>
+    <button class="creditly-blue-theme-submit" onclick="submitForm()"><span>Submit</span></button>
+  </form>
+  </div>
+</body>
+<script src="js/validation.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+</html>

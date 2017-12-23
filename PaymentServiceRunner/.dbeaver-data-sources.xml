@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data-sources>
+	<data-source id="h2_embedded-1606ec96426-76f139badcd4d8d5" provider="generic" driver="h2_embedded" name="H2 - PaymentServiceRunner" save-password="true" show-system-objects="true" show-util-objects="true" read-only="true">
+		<connection server="" database="./PaymentServiceRunner" url="jdbc:h2:./PaymentServiceRunner" user="&quot;&quot;" password="UUZmwQ==" type="dev"/>
+	</data-source>
+	<filters/>
+</data-sources>
